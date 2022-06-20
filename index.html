@@ -1,805 +1,1923 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>kenmerk Softwares</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
 
-  <!-- Favicons -->
+body {
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: 1px;
+    height: 100%;
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    height: 100%
+}
+
+::selection {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+::-moz-selection {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    line-height: 32px;
+    color:white;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    border: 0 none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.no-padding {
+    padding: 0
+}
+
+.section-space-padding {
+    padding: 100px 0px;
+}
+
+.section-title {
+    text-align: center;
+}
+
+.section-title h2 {
+    margin-top: 0;
+    color: white;
+    font-weight: 600;
+
+	border-radius: 25px;
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 350px;
+	margin-bottom: 30px;
+}
+
+.section-title p {
+    font-weight: 400;
+	line-height: 25px;
+	margin-bottom: 40px;
+}f
+
+.bg-cover {
+	background-repeat: no-repeat;
+}
+
+.grabbing {
+	cursor: url(../images/owl-carousel/grabbing.png) 8 8, move;
+}
+
+.button {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.button:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+
+.button:before {
+	font-family: 'FontAwesome';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+.button-style {
+	border-radius: 50px;
+	border: 3px solid #fff;
+	color: #fff;
+	overflow: hidden;
+}
+
+.button-style:hover,
+.button-style:active,
+.button-style:focus {
+	background: #000000;
+	color: #ffffff !important;
+}
+
+.button-style:before {
+	position: absolute;
+	height: 100%;
+	font-size: 125%;
+	line-height: 3.5;
+	color: #fff;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.button-style:active:before {
+	color: #ffffff;
+}
+
+.button-style-icon:before {
+	left: 130%;
+	top: -2px;
+}
+
+.button-style-icon:hover:before {
+	left: 80%;
+}
+
+.button-style-dark {
+	border: 3px solid #000000 !important;
+	color: #000000;
+}
+
+
+
+/* Preloader */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    z-index: 999;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    transition: all .4s ease;
+}
+
+body.loaded #preloader{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader{
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #ffffff;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+.loader:before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #000000;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+
+.loader:after{
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #ffffff;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* Home Section and Navigation Menu */
+
+.home-section {
+    height: 100%;
+}
+
+/* .home-section-background {
+    position: relative;
+    height: 100%;
+    background: url(../images/images/hj.jpg);
+    background-size: cover;
+    z-index: 1;
+} */
+
+/* .home-section-background:after {
+    position: absolute;
+    background: rgba(0, 0, 0, .7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+} */
+
+.display-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header-text {}
+
+.home-section-background h2 {
+    color: #f8f8f8;
+    font-size: 50px;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.home-section-background p {
+    color: #f8f8f8;
+    letter-spacing: 4px;
+    font-size: 15px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.header-top-area {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+.logo {
+    padding-top: 28px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.logo a {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.navigation-menu .navbar-nav li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 30px 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+    font-weight: 600;
+}
+
+.navigation-menu .navbar-nav li a:hover {
+    background: none;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.nav li a:focus,
+.nav li a:hover {
+    background: none;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navbar {
+    margin: 0;
+}
+
+.navigation-background {
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    background: #000;
+}
+
+.navigation-background .logo {
+    padding-top: 18px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navigation-background .navigation-menu .navbar-nav li a {
+    color: #fff;
+    padding: 20px 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.navigation-background .navigation-menu .navbar-nav li a:hover {
+    color: #fff;
+}
+
+
+
+/* About Me */
+
+.about-section {
+	overflow: hidden;
+	background-color: #000000;
+}
+
+.about-section img {
+	position: absolute;
+    height: 450px;
+    height: 500px;
+}
+
+.about-me {}
+
+.about-me h2 {
+	padding: 0px 50px;
+}
+
+.about-me p {
+	padding: 50px;
+	font-size: 15px;
+}
+
+
+
+/* Portfolio */
+
+.portfolio {
+    background-color: black;
+}
+
+.portfolio-inner .mix {
+    display: none;
+}
+
+ul.portfolio {
+    padding: 0;
+    list-style: none;
+    margin-top: 30px;
+    margin-left: 8px;
+    text-align: center;
+}
+
+ul.portfolio li {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 8px;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(246, 246, 246);
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+ul.portfolio li:hover {
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+ul.portfolio li.active {
+    color: #ffffff;
+    background-color: #000000;
+    padding: 5px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px 0px white;
+}
+
+.portfolio .item {
+    margin-top: 30px;
+    position: relative;
+}
+
+.portfolio .item img {
+    width: 100%;
+}
+
+.item {
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.portfolio .item:hover a:before{
+  top: 40%;
+  box-shadow: 0px 16px 22px 0px  white;
+  -webkit-transition: all 400ms ease-in-out;
+          transition: all 400ms ease-in-out;
+}
+
+.portfolio .item a:before{
+  color: #ffffff;
   
-  <link href="img/images/logi.png" rel="">
+  font-family: "FontAwesome";
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  font-size: 25px;
+  top: 2%;
+  opacity: 0;
+  left: 0%;
+  right: 0%;
+  background-color: #000000;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  line-height: 70px;
+  margin: 0 auto;
+  -webkit-transition: all 400ms ease-in-out;
+          transition: all 400ms ease-in-out;
+}
 
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+.portfolio .item a:hover:before{
+  opacity: 1;
+}
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
+	margin-top: 40px;
+    font-size: 50px;
+    background-color: #000000;
+    width: 44px;
+	right: 0px;
+}
 
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <!--/ Nav Star /-->
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">K E N M E R K</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll active" href="#home">Home</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll" href="#blog">About Us</a>
-        </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#service">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#work">Work</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link js-scroll" href="#blog">Blog</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!--/ Nav End /-->
-
-  <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(img/images/f.jpeg)">
-    <div class="overlay-itro"></div>
-    <div class="intro-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">Kenmerk Softwares</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Tomorrow Is Today</span><strong class="text-slider"></strong></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--/ Intro Skew End /-->
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+    cursor: inherit;
+}
 
 
-<section id="blog">
-<div class="sectionn">
-  <div class="containerr">
-    <div class="content-sectionn">
-      <div class="title">
-        <h1 class="title-a">About Us</h1>
-   
-              
-      </div>
-      <div class="contentt">
 
-        <p>Kenmerk Softwares is an End-to-End IT/ITS services and solutions provider.We help our customers to do
-          business better with our industry wide experience,deep technology expertise and comprehensive portfolio of service.We believe
-          in three important factors which are quality,value and time.Our clock function to deliver you the best at the right time and at
-          the right cost..</p>
-        <!-- <div class="button">
-						<a href="">Read More</a>
-					</div> -->
-      </div>
-      <!-- <div class="social">
-					<a href=""><i class="fab fa-facebook-f"></i></a>
-					<a href=""><i class="fab fa-twitter"></i></a>
-					<a href=""><i class="fab fa-instagram"></i></a>
-				</div> -->
-    </div>
-    <div class="image-sectionn">
-      <img src="img/images/lightfinal.png">
-    </div>
-  </div>
-</div>
-</section>
-  
+/* Testimonial */
 
-  <!--/ Section Services Star /-->
-  <section id="service" class="services-mf route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
+.testimonial-section {
+    background: #000000;
+}
+
+.testimonial-carousel-list {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+	box-shadow: 0px 1px 2px 0px  white;
+    transition: all 0.3s ease-in-out;
+}
+
+.testimonial-carousel-list:hover {
+    box-shadow: 0px 16px 22px 0px  white;
+    top: -5px;
+}
+
+.testimonial-word {
+    padding: 0px 100px;
+}
+
+.testimonial-word img {
+	margin: 0 auto;
+    max-width: 140px;
+}
+
+.testimonial-word h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+	color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 20px 0px;
+}
+
+.testimonial-word p {
+    line-height: 25px;
+}
+
+.owl-navi {
+	color: #000000;
+}
+
+.owl-navi:hover {
+	color: #000000 !important;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+    display: inline-block;
+    zoom: 1;
+    margin: 5px;
+    padding: 7px 13px;
+	background-color: transparent;
+    opacity: 1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+
+/* Statistics */
+
+.statistics-section {
+	position: relative;
+    background: url(/images/971.jpg);
+    background-size: cover;
+    z-index: 1;
+}
+
+.statistics {
+  margin: 25px 0;
+  overflow: hidden;
+  color: #000000;
+}
+
+.statistics.block .statistics-icon,
+.statistics.block .statistics-content {
+  width: auto;
+  float: none;
+  text-align: center;
+}
+
+.statistics-icon {
+  width: 30%;
+  text-align: center;
+  margin-right: 5%;
+  float: left;
+  font-size: 50px;
+}
+
+.statistics-content {
+  float: left;
+  width: 65%;
+  text-align: left;
+}
+
+.statistics-content > h5 {
+  font-size: 34px;
+  margin-top: 0;
+}
+
+.statistics-content > span {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+
+
+/* Services */
+
+.services-section {
+  background-color: #000000;
+}
+
+.services-section hr {
+  border-bottom: 2px solid #ffffff;
+  width: 42px;
+  margin-left: 0px;
+}
+
+.services-section .services-detail {
+  border-radius: 4px;
+  height: 400px;
+  border-bottom-right-radius:1%;
+  background-color: #000000;
+  box-shadow: 0px 1px 2px 0px  white;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  top: 0px;
+  padding: 60px 40px 60px 40px;
+  margin-top: 32px;
+}
+
+.services-section .services-detail:hover {
+  border-bottom-right-radius: 4px;
+  box-shadow: 0px 16px 22px 0px white;
+  top: -5px;
+}
+
+.services-section .services-detail .fa {
+  font-size: 42px;
+}
+
+
+
+/* Call to Action */
+
+.call-to-action {
+}
+
+.call-to-action h2 {
+	font-size: 30px;
+}
+
+
+
+/* Contact Us */
+
+.contact-us {
+	background-color: #000000;
+}
+
+.contact-us-detail {
+}
+
+.contact-us-detail i {
+	font-size: 30px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 1px 2px 0px white;
+	transition: all 0.3s ease-in-out;
+    width: 88px;
+    height: 88px;
+    line-height: 88px;
+}
+
+.contact-us-detail:hover i {
+	box-shadow: 0px 8px 15px 0px white;
+    margin-top: -5px;
+}
+
+.contact-us-detail a {
+	color: rgb(255, 255, 255);
+}
+
+.contact-us-detail a:hover {
+	color: rgb(255, 255, 255);
+}
+
+.form-group {
+	margin-bottom: 25px;
+    align-items: center;
+}
+
+.form-control {
+	border: 2px solid transparent;
+	height: 50px;
+	border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px;
+	-webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+	   -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+	    -ms-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+		 -o-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+			box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+	-webkit-transition:all 150ms ease-in-out 0s;
+	   -moz-transition:all 150ms ease-in-out 0s;
+	    -ms-transition:all 150ms ease-in-out 0s;
+	     -o-transition:all 150ms ease-in-out 0s;
+		    transition:all 150ms ease-in-out 0s;
+}
+.form-control:focus {
+	border-color: #171717;
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	    -ms-box-shadow: none;
+		 -o-box-shadow: none;
+			box-shadow: none;
+}
+
+.form-control:focus {
+	border-color: #ffffff;
+	border-width: 2px;
+}
+
+.map {
+    width: 100%;
+    height: 340px;
+    border: 1px solid #000000;
+}
+
+
+
+/* Social Icons */
+
+.social-icon {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.social-icon:before,
+.social-icon:after {
+  content: " ";
+  display: table;
+}
+
+.social-icon:after {
+  clear: both;
+}
+
+.social-icon li {
+  display: inline-block;
+  margin: 0px 4px;
+}
+
+.social-icon li a {
+  display: block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  text-align: center;
+  border: 0 none;
+  border-radius: 4px;
+  font-size: 30px;
+  box-shadow: 0px 1px 2px 0px rgba(90, 91, 95, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icon li a:hover {
+   box-shadow: 0px 8px 15px 0px rgba(90, 91, 95, 0.33);
+}
+
+.social-icon li a .fa {
+  line-height: inherit;
+}
+
+.facebook {
+   background-color: #3b5998;
+}
+
+.twitter {
+   background-color: #0cb417;
+}
+
+.google-plus {
+   background-color: #dd4b39;
+}
+
+.instagram {
+   background-color: #cb20ce2f;
+}
+
+.linkedin {
+   background-color: #0077b5;
+}
+
+.pinterest {
+   background-color: #bd081c;
+}
+
+.youtube {
+   background-color: #cd201f;
+}
+
+.vimeo {
+   background-color: #1ab7ea;
+}
+
+.dribbble {
+   background-color: #ea4c89;
+}
+
+.behance {
+   background-color: #1769ff;
+}
+
+.flickr {
+   background-color: #ff0084;
+}
+
+.tumblr {
+   background-color: #35465c;
+}
+
+.foursquare {
+   background-color: #f94877;
+}
+
+.github {
+   background-color: #333333;
+}
+
+.skype {
+   background-color: #00aff0;
+}
+
+
+
+/* Footer */
+
+.footer-section {
+    background: #000;
+    padding: 80px 0px;
+    color: #f8f8f8;
+}
+
+.footer-section p {
+    font-size: 14px;
+}
+
+.footer-section a {
+    color: #ffffff;
+}
+
+
+
+/* Responsive */
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+    .navigation-menu .navbar-nav li a {
+        padding: 30px 11px;
+        font-size: 12px;
+    }
+    .navigation-background .navigation-menu .navbar-nav li a {
+        padding: 30px 11px;
+        font-size: 12px;
+    }
+	.navigation-background .logo {
+		padding-top: 28px;
+	}
+}
+
+
+@media only screen and (max-width: 991px) {
+    .about-section img {
+        position: inherit;
+     }
+	 
+     .call-to-action h2 {
+        font-size: 20px;
+	 }
+	 
+     .space-set {
+        margin-top: 80px;
+	 }
+	 
+     .footer-section p {
+         text-align: center !important;
+     }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .navbar-toggle .icon-bar {
+        background: #f8f8f8;
+    }
+    .navigation-background .navbar-toggle .icon-bar {
+        background: #fff;
+    }
+    .navbar-toggle {
+        margin-right: 0px;
+        margin-top: -30px;
+    }
+    .navbar {
+        min-height: 0px;
+    }
+    .navigation-menu .navbar-nav li a {
+        padding: 11px 15px;
+    }
+    .navigation-menu .navbar-nav li a:hover {
+        color: #000000;
+    }
+    .navigation-background .navigation-menu .navbar-nav li a:hover {
+        color: #ffffff;
+    }
+    .navigation-background .navigation-menu .navbar-nav li a {
+        padding: 11px 15px;
+    }
+    .navbar-fixed-bottom .navbar-collapse,
+    .navbar-fixed-top .navbar-collapse {
+        max-height: 420px;
+    }
+    .navbar-toggle {
+        margin-top: -30px;
+    }
+    .navbar-collapse {
         
-            </h3>
-         
-       
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="fa fa-android" aria-hidden="true"></i>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Mobile Applications</h2>
-              <p class="s-description text-center">
-          We have expertise in multifarious mobile apps development that will be helpfull in propelling the business in the online
-          market.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="fa fa-globe"></i>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Web Development</h2>
-              <p class="s-description text-center">
-                  We take care of every aspect of website design from programming, copywriting and graphic design to complete development
-                  of your website.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="fa fa-desktop" aria-hidden="true"></i>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">System Softwares</h2>
-              <br/>
-              
-              <p class="s-description text-center">
-              We have the best team to develop system software according to the requirement of the customers.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="fa fa-briefcase"></i>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Digital Marketing</h2>
-              <br/>
-                  <br/>
-              <p class="s-description text-center">
-          Search Engine optimization,
-          Email Marketing,
-          Facebook Marketing,
-          Youtube Marketing,
-          Instagram Marketing
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="ion-paintbrush"></i></span>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title"> Design</h2>
-              <p class="s-description text-center">
-        We Understand the people we are designing for, their needs and current behaviour, the context in which they will use the
-        product ,and then use this insights to create 
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-box">
-            <div class="service-ico">
-              <span class="ico-circle"><i class="fa fa-television" aria-hidden="true"></i>
-            </div>
-            <div class="service-content">
-              <h2 class="s-title">Android Tv Aplication</h2>
-              <br/>
-                <br />
-              <p class="s-description text-center">
-                We have the best team to develop Android Tv Apps according to the requirement of the customers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--/ Section Services End /-->
-<!-- 
-  <div class="section-counter paralax-mf bg-image" style="background-image: url(img/counters-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">450</p>
-              <span class="counter-text">WORKS COMPLETED</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">15</p>
-              <span class="counter-text">YEARS OF EXPERIENCE</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-ios-people"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">550</p>
-              <span class="counter-text">TOTAL CLIENTS</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3 col-lg-3">
-          <div class="counter-box pt-4 pt-md-0">
-            <div class="counter-ico">
-              <span class="ico-circle"><i class="ion-ribbon-a"></i></span>
-            </div>
-            <div class="counter-num">
-              <p class="counter">36</p>
-              <span class="counter-text">AWARD WON</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-  <!--/ Section Portfolio Star /-->
-  <section id="work" class="portfolio-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-Our Works
-            </h3>
-            <!-- <p class="subtitle-a">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </p>
-            <div class="line-mf"></div> -->
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/android/pscdem.jpg" data-lightbox="gallery-">
-              <div class="work-img">
-                <img src="img/images/android/pscdem.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">Psc Rank Book</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Android Application</span>  <span class="w-date"></span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/android/bridem.jpg" data-lightbox="gallery-">
-              <div class="work-img">
-                <img src="img/images/android/bridem.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">Bristu</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Android Application</span> <span class="w-date"></span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/android/pallydem.jpg" data-lightbox="gallery-m">
-              <div class="work-img">
-                <img src="img/images/android/pallydem.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">Malankarakunnu Church</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Android Appliction</span>  <span class="w-date"></span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/web/web1.jpg" data-lightbox="gallery-m">
-              <div class="work-img">
-                <img src="img/images/web/web1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">Saturday Sunday Films</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Web Design</span>  <span class="w-date"></span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/web/web2.jpg" data-lightbox="gallery-m">
-              <div class="work-img">
-                <img src="img/images/web/web2.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">My Guider Consultancy</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Web Design</span>  <span class="w-date"></span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/sys/sys1.jpg" data-lightbox="gallery-m">
-              <div class="work-img">
-                <img src="img/images/sys/sys1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">My Guider Consultancy</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Web Design</span>  <span class="w-date"></span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                              <span class="ion-ios-plus-outline"></span>
-                            </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/sys/sys2.jpg" data-lightbox="gallery-m">
-              <div class="work-img">
-                <img src="img/images/sys/sys2.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">My Guider Consultancy</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Web Design</span>  <span class="w-date"></span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                              <span class="ion-ios-plus-outline"></span>
-                            </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/tv/tv.png" data-lightbox="gallery-m">
-              <div class="work-img">
-                <img src="img/images/tv/tv.png" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">My Guider Consultancy</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Web Design</span>  <span class="w-date"></span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                              <span class="ion-ios-plus-outline"></span>
-                            </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="work-box">
-            <a href="img/images/sys/sys1.jpg" data-lightbox="gallery-mf">
-              <div class="work-img">
-                <img src="img/images/sys/sys1.jpg" alt="" class="img-fluid">
-              </div>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <!-- <h2 class="w-title">Studio Big Bang</h2> -->
-                    <div class="w-more">
-                      <!-- <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2017</span> -->
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <!-- <div class="w-like">
-                      <span class="ion-ios-plus-outline"></span>
-                    </div> -->
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+    }
+    .navigation-background .navbar-collapse {
         
-      </div>
-    </div>
-  </section>
-  <!--/ Section Portfolio End /-->
+    }
+    .home-section-background {
+        padding-top: 120px;
+    }
+    .home-section-background h2 {
+        font-size: 22px;
+    }
+    .section-title h2 {
+        font-size: 22px;
+    }
+    .testimonial-word {
+        padding: 0;
+    }
+    .testimonial-carousel-list {
+        margin-top: 0px;
+    }
+    .statistics-center {
+        margin-left: 20%;
+	}
+    .call-to-action h2 {
+        font-size: 18px;
+        line-height: 35px;
+	}
+    .contact-us-detail {
+        margin-bottom: 30px;
+    }
+}
 
-  <!--/ Section Testimonials Star /-->
-  <!-- <div class="testimonials paralax-mf bg-image" style="background-image: url(img/overlay-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div id="testimonial-mf" class="owl-carousel owl-theme">
-            <div class="testimonial-box">
-              <div class="author-test">
-                <img src="img/testimonial-2.jpg" alt="" class="rounded-circle b-shadow-a">
-                <span class="author">Xavi Alonso</span>
-              </div>
-              <div class="content-test">
-                <p class="description lead">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <span class="comit"><i class="fa fa-quote-right"></i></span>
-              </div>
-            </div>
-            <div class="testimonial-box">
-              <div class="author-test">
-                <img src="img/testimonial-4.jpg" alt="" class="rounded-circle b-shadow-a">
-                <span class="author">Marta Socrate</span>
-              </div>
-              <div class="content-test">
-                <p class="description lead">
-                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit.
-                </p>
-                <span class="comit"><i class="fa fa-quote-right"></i></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
-  <!--/ Section Blog Star /-->
-  <!-- <section id="blog" class="blog-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              Blog
-            </h3>
-            <p class="subtitle-a">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            </p>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="blog-single.html"><img src="img/post-1.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Travel</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-              <p class="card-description">
-                Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                a pellentesque nec,
-                egestas non nisi.
-              </p>
-            </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <a href="#">
-                  <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                  <span class="author">Morgan Freeman</span>
-                </a>
-              </div>
-              <div class="post-date">
-                <span class="ion-ios-clock-outline"></span> 10 min
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="blog-single.html"><img src="img/post-2.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Web Design</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-              <p class="card-description">
-                Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                a pellentesque nec,
-                egestas non nisi.
-              </p>
-            </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <a href="#">
-                  <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                  <span class="author">Morgan Freeman</span>
-                </a>
-              </div>
-              <div class="post-date">
-                <span class="ion-ios-clock-outline"></span> 10 min
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="blog-single.html"><img src="img/post-3.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Web Design</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-              <p class="card-description">
-                Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                a pellentesque nec,
-                egestas non nisi.
-              </p>
-            </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <a href="#">
-                  <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                  <span class="author">Morgan Freeman</span>
-                </a>
-              </div>
-              <div class="post-date">
-                <span class="ion-ios-clock-outline"></span> 10 min
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <!--/ Section Blog End /-->
+@media only screen and (max-width: 555px) {
+	.social-icon li a {
+         width: 40px;
+         height: 40px;
+         line-height: 40px;
+         font-size: 20px;
+      }
+	  
+     .section-title h2 {
+         font-size: 26px;
+       }
+	   
+      .section-title h2 {
+         font-weight: 500;
+         width: 200px;
+     }
+	 
+      .section-title p {
+         font-weight: 300;
+         font-size: 12px;
+      }
+	  
+     .home-section-background h2 {
+         font-size: 18px;
+      }
+	  
+     .home-section-background p {
+         font-size: 12px;
+      }
+}
 
-  <!--/ Section Contact-Footer Star /-->
-  <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(img/overlay-bg.jp)">
-    <div class="overlay-mf"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="contact-mf">
-            <div id="contact" class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="title-box-2">
-                    <h5 class="title-left">
-                      Send Message Us
-                    </h5>
-                  </div>
-                  <div>
-                      <form action="" method="post" role="form" class="contactForm">
-                      <div id="sendmessage">Your message has been sent. Thank you!</div>
-                      <div id="errormessage"></div>
-                      <div class="row">
-                        <div class="col-md-12 mb-3">
-                          <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                            <div class="validation"></div>
-                          </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                          <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                            <div class="validation"></div>
-                          </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                              <div class="validation"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                          <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                            <div class="validation"></div>
-                          </div>
-                        </div>
-                        <div class="col-md-12">
-                          <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="title-box-2 pt-4 pt-md-0">
-                    <h5 class="title-left">
-                      Get in Touch
-                    </h5>
-                  </div>
-                  <div class="more-info">
-                    <p class="t">
-                     Kenmerk Softwares<br/>
-                     Sulthan Bathery<br />
-                     Wayanad <br />
-                     
 
-                    </p>
-                    <ul class="list-ico">
-                      <!-- <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                      <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                      <li><span class="ion-email"></span> contact@example.com</li> -->
-                    </ul>
-                  </div>
-                  <div class="socials">
-                    <ul>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
-                      <li><a href=""><span class="ico-circle"><i class="ion-social-pinterest"></i></span></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="copyright-box">
-              <p class="copyright">&copy; Kenmerk <strong>@2022</strong>.</p>
-              <div class="credits">
-                <!--
-                  All the links in the footer should remain intact.
-                  You can delete the links only if you purchased the pro version.
-                  Licensing information: https://bootstrapmade.com/license/
-                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-                -->
-                <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </section>
-  <!--/ Section Contact-footer End /-->
+@media only screen and (max-width: 449px) {
+     .button {
+          padding: 15px 30px;
+          font-weight: 600;
+          font-size: 10px;
+	  }
+	  
+     .button-style:before {
+          display: none;
+	   }
+	
+}
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
 
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/popper/popper.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/counterup/jquery.waypoints.min.js"></script>
-  <script src="lib/counterup/jquery.counterup.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-  <script src="lib/typed/typed.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
 
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+/* Scroll To Top */
 
-</body>
-</html>
+.scroll-to-top {
+    background-color: #000000;
+    display: none;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    right: 0px;
+    bottom: 50px;
+    z-index: 999;
+}
+
+.scroll-to-top:hover,
+.scroll-to-top:focus {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+
+/* Useful Classes */
+
+
+/* Spacing ( with Margin and Padding ) */
+
+/* Margin */
+
+.margin-0 {
+	margin: 0px !important;
+}
+
+/* Margin Top */
+
+.margin-top-0 {
+	margin-top: 0px !important;
+}
+
+.margin-top-10 {
+	margin-top: 10px !important;
+}
+
+.margin-top-20 {
+	margin-top: 20px !important;
+}
+
+.margin-top-30 {
+	margin-top: 30px !important;
+}
+
+.margin-top-40 {
+	margin-top: 40px !important;
+}
+
+.margin-top-50 {
+	margin-top: 50px !important;
+}
+
+.margin-top-60 {
+	margin-top: 60px !important;
+}
+
+.margin-top-70 {
+	margin-top: 70px !important;
+}
+
+.margin-top-80 {
+	margin-top: 80px !important;
+}
+
+.margin-top-90 {
+	margin-top: 90px !important;
+}
+
+.margin-top-100 {
+	margin-top: 100px !important;
+}
+
+.margin-top-120 {
+	margin-top: 120px !important;
+}
+
+.margin-top-150 {
+	margin-top: 150px !important;
+}
+
+.margin-top-200 {
+	margin-top: 200px !important;
+}
+
+
+/* Margin Bottom */
+
+.margin-bottom-0 {
+	margin-bottom: 0px !important;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px !important;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px !important;
+}
+
+.margin-bottom-30 {
+	margin-bottom: 30px !important;
+}
+
+.margin-bottom-40 {
+	margin-bottom: 40px !important;
+}
+
+.margin-bottom-50 {
+	margin-bottom: 50px !important;
+}
+
+.margin-bottom-60 {
+	margin-bottom: 60px !important;
+}
+
+.margin-bottom-70 {
+	margin-bottom: 70px !important;
+}
+
+.margin-bottom-80 {
+	margin-bottom: 80px !important;
+}
+
+.margin-bottom-90 {
+	margin-bottom: 90px !important;
+}
+
+.margin-bottom-100 {
+	margin-bottom: 100px !important;
+}
+
+.margin-bottom-120 {
+	margin-bottom: 120px !important;
+}
+
+.margin-bottom-150 {
+	margin-bottom: 150px !important;
+}
+
+.margin-bottom-200 {
+	margin-bottom: 200px !important;
+}
+
+
+
+/* Padding */
+
+.padding-0 {
+	padding: 0px !important;
+}
+
+
+/* Padding Top */
+
+.padding-top-0 {
+	padding-top: 0px !important;
+}
+
+.padding-top-10 {
+	padding-top: 10px !important;
+}
+
+.padding-top-20 {
+	padding-top: 20px !important;
+}
+
+.padding-top-30 {
+	padding-top: 30px !important;
+}
+
+.padding-top-40 {
+	padding-top: 40px !important;
+}
+
+.padding-top-50 {
+	padding-top: 50px !important;
+}
+
+.padding-top-60 {
+	padding-top: 60px !important;
+}
+
+.padding-top-70 {
+	padding-top: 70px !important;
+}
+
+.padding-top-80 {
+	padding-top: 80px !important;
+}
+
+.padding-top-90 {
+	padding-top: 90px !important;
+}
+
+.padding-top-100 {
+	padding-top: 100px !important;
+}
+
+.padding-top-120 {
+	padding-top: 120px !important;
+}
+
+.padding-top-150 {
+	padding-top: 150px !important;
+}
+
+.padding-top-200 {
+	padding-top: 200px !important;
+}
+
+
+/* Padding Bottom */
+
+.padding-bottom-0 {
+	padding-bottom: 0px !important;
+}
+
+.padding-bottom-10 {
+	padding-bottom: 10px !important;
+}
+
+.padding-bottom-20 {
+	padding-bottom: 20px !important;
+}
+
+.padding-bottom-30 {
+	padding-bottom: 30px !important;
+}
+
+.padding-bottom-40 {
+	padding-bottom: 40px !important;
+}
+
+.padding-bottom-50 {
+	padding-bottom: 50px !important;
+}
+
+.padding-bottom-60 {
+	padding-bottom: 60px !important;
+}
+
+.padding-bottom-70 {
+	padding-bottom: 70px !important;
+}
+
+.padding-bottom-80 {
+	padding-bottom: 80px !important;
+}
+
+.padding-bottom-90 {
+	padding-bottom: 90px !important;
+}
+
+.padding-bottom-100 {
+	padding-bottom: 100px !important;
+}
+
+.padding-bottom-120 {
+	padding-bottom: 120px !important;
+}
+
+.padding-bottom-150 {
+	padding-bottom: 150px !important;
+}
+
+.padding-bottom-200 {
+	padding-bottom: 200px !important;
+}
+
+
+
+/* Colors */
+
+.color-1 {
+	color: #f306a0;
+}
+
+.color-2 {
+	color: #d60bfb;
+}
+
+.color-3 {
+	color: #d8be10;
+}
+
+.color-4 {
+	color: #0fd28a;
+}
+
+.color-5 {
+	color: #ffffff;
+}
+
+.color-6 {
+	color: #000000;
+}
+
+
+
+/* Background Color */
+
+.bg-color-1 {
+	background-color: #f306a0;
+}
+
+.bg-color-2 {
+	background-color: #d60bfb;
+}
+
+.bg-color-3 {
+	background-color: #d8be10;
+}
+
+.bg-color-4 {
+	background-color: #0fd28a;
+}
+
+.bg-color-5 {
+	background-color: #f97400;
+}
+
+.bg-color-6 {
+	background-color: #f9f9f9;
+}
+
+
+
+/* UiPasta Credit */
+
+.uipasta-credit {
+}
+
+.uipasta-credit a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.uipasta-credit a:hover {
+    color: #ffffff;
+}
+.serviceBox{
+    text-align: center;
+    padding: 40px 16px 30px;
+    border: 1px solid transparent;
+    transition:all 0.3s ease 0s;
+    position: relative;
+    z-index: 1;
+}
+.serviceBox:after,
+.serviceBox:before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    transition:all 0.5s ease 0s;
+}
+.serviceBox:after{
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    transform: scaleX(0);
+    transform-origin: 0 100% 0;
+    z-index: -1;
+}
+.serviceBox:before{
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+    transform: scaleY(0);
+    transform-origin: 100% 0 0;
+    z-index: -1;
+}
+.serviceBox:hover:after{
+    transform: scaleX(1);
+}
+.serviceBox:hover:before{
+    transform: scaleY(1);
+}
+.serviceBox .service-icon i{
+    font-size: 32px;
+    line-height: 32px;
+    color:#ffffff;
+    transition: all 0.3s ease 0s;
+}
+.serviceBox .service-content h3{
+    margin-bottom: 25px;
+}
+.serviceBox .service-content h3 a{
+    font-size: 14px;
+    letter-spacing: 4px;
+    line-height: 22px;
+    color:#181818;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.serviceBox .service-content h3 a:hover{
+    color:#ffffff;
+}
+.serviceBox .service-content p{
+    color:#ffffff;
+    line-height: 26px;
+}
+.serviceBox .read{
+    margin-top: 20px;
+}
+.serviceBox .read a{
+    border:1px solid #ffffff;
+    border-radius: 50%;
+    color:#ffffff;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    line-height: 16px;
+    text-align: center;
+    text-decoration: none;
+    transition:all 0.3s ease 0s;
+    opacity: 0;
+}
+.serviceBox .read a:hover,
+.serviceBox:hover .service-icon i{
+    color:#ffffff;
+    border-color: #181818;
+}
+.serviceBox:hover .read a{
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+}
+@media screen and (max-width: 990px){
+    .serviceBox{
+        margin-bottom:10px;
+    }
+}
+
+
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: rgb(255, 255, 255);
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    color:white;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: rgb(255, 255, 255);
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.styled-input.wide { 
+    width: 650px;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15em;
+}
+
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
+
+.submit-btn {
+    float: right;
+    padding: 7px 35px;
+    border-radius: 60px;
+    display: inline-block;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
+              0 2px 10px 0 rgba(0,0,0,0.07);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+}
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width:100%;
+        float: none;
+        text-align:center;
+        color: rgb(255, 255, 255);
+    }
+}
+
+input[type=checkbox] + label {
+  color: rgb(0, 0, 0);
+  font-style: italic;
+} 
+
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+}
+.tr{
+    color: white;
+}
+
+
+
+.kj{
+    color: white;
+    text-align: center;
+}
+
+
+
+
+/* skills */
+.skills-section{
+    background-color: black;
+padding-top: 20px;
+}
+
+.skills-header{
+text-align: center;
+color: #fff;
+padding: 1rem;
+position: relative;
+}
+
+.skills-header:after{
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 100px;
+height: 4px;
+background-color: #ffffff;
+border-radius: 2px;
+}
+
+.skills-container{
+display: grid;
+grid-tempLate-columns: repeat(5, 1fr);
+justify-content:center;
+align-items:center;
+text-align: center;
+grid-gap:2rem;
+padding: 3rem 80px;
+font-size: 1.2rem;
+}
+.skills-box{
+padding: 1rem;
+color: rgb(255, 255, 255);
+cursor:pointer;
+}
+.skills-box:hover > .skills-title after, 
+.skills-box:hover > .skills-title before{
+width: 30px;
+}
+.skills-box:hover .skills-img{
+transform: translateX(-20px);
+}
+
+.skills-title{
+display:flex;
+flex-direction: column;
+align-items:center;
+padding: 0.5rem;
+margin-bottom: 0.5rem;
+position: relative;
+}
+
+.skills-title:after{
+content: '';
+position:absolute;
+bottom: 0;
+right: 50%;
+width:20px;
+height:4px;
+border-radius: 2px 0 0 2px;
+background-color: #000000;
+transition: .5s;
+}
+
+.skills-title:before{
+content: '';
+position:absolute;
+bottom: 0;
+left: 50%;
+width:100px;
+height:4px;
+border-radius: 0 2px 2px 0;
+background-color: #010101;
+}
+
+.skills-icons{
+width:50px;
+z-index:2;
+}
+
+.skills-img{
+width:90px;
+height:90px;
+position: relative;
+border-radius: 45px;
+background-color: #fff;
+display:flex;
+justify-content:center;
+align-items:center;
+transition: .5s;
+}
+
+.skills-img:after{
+content: '';
+position:absolute;
+top:0;
+left: 0;
+width:50%;
+height:90px;
+background: white;
+border-radius: 45px 0 0 45px;
+}
+.skills-title h3{
+color: rgb(255, 255, 255);
+margin-top: 0.5rem;
+font-size: 1.5rem;
+}
+@media screen and (max-width:990px){
+ .skills-container{
+ grid-tempLate-columns: repeat(2, 1fr);
+ padding: 2rem 50px;
+ }
+}
+
+@media screen and (max-width:650px){
+ .skills-container{
+ grid-tempLate-columns:repeat(2, 1fr);
+ padding: 2rem 50px;
+ }
+}
+@media only screen and (max-width: 555px){
+    
+}
+
+
+
+/* float */
+
+.center{
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.center h1{
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 100px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-size: cover;
+  background-image: url(/images/visu.png);
+  -webkit-background-clip: text;
+  animation: background-text-animation 15s linear infinite;
+}
+@keyframes background-text-animation {
+  0%{
+    background-position: left 0px top 50%;
+  }
+  50%{
+    background-position: left 1500px top 50%;
+  }
+  100%{
+    background-position: left 0px top 50%;
+  }
+}
+
+
+
+
+
+
+
+.wrapper {
+  height: 10vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+}
+
+.typin {
+  width: 22ch;
+  color: white;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+
+
+
+
+
+
+
+
+.banner-area h2 {
+    font-family: poppins;
+    font-size: 65px;
+    margin: 0 0 25px; 
+}
+.banner-area{
+    width: 100%;
+    height: 100vh;
+    background: url(/images/images/hj.jpg); 
+    background-position: center;
+    -webkit-background-size:cover;
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2vw;
+    color: #fff;
+}
+.btn{
+    text-decoration: none;
+    padding: 10px 50px;
+    color: #fff;
+    border:3px solid #fff;
+    transition: 0.6s ease;
+    animation: animate 2s 1;
+    font-size: 15px;
+    font-weight: 900;
+}
+.btn:hover{
+    background-color: #fff;
+    color: #000;
+}
+@keyframes animate {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+h2{
+    animation: animate 2s 1;
+}
+
+
+@media (max-width: 600px){
+    nav {
+width: 100%;
+left: 10px;
+}
+    nav a {
+font-size: 11px;
+margin-right: 7px;
+}
+    .banner-area h2 {
+font-size: 28px;
+}
+}
